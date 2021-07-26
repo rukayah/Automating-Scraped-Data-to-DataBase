@@ -59,16 +59,16 @@ class Webscraping:
            }
         )
     #Clean the data
-        data['category_id'] = 1
+        data['category_name'] = self.category
         data['title'] = data['title'].str.strip().replace("\n", "").replace("\"","")
         data['price'] = data['price'].str.strip()
         data['price'] = data['price'].str.replace("\n","")
             
         return data
 
-scrape = Webscraping(100,'bracelet')
+scrape = Webscraping(3000,'bracelet')
 Ebay = scrape.extract()
-Ebay.to_csv("Ebay_bracele.csv", index=False,header= True)
+Ebay.to_csv("Ebay_bracelet.csv", index=False,header= True)
 
 
 

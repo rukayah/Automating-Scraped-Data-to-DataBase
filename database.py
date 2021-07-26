@@ -7,16 +7,6 @@ connection = psycopg2.connect(os.getenv("DATABASE_URL"))
 
 
 cur = connection.cursor()
-
-cur.execute('''ALTER TABLE product_joined DROP COLUMN categoryname;''')
-connection.commit()
-
-cur.execute(
-'''CREATE TABLE Product_joined AS
-SELECT * FROM products JOIN category ON products.category_name = category.categoryname;
-''')
-connection.commit()
-
 cur.execute("DROP TABLE IF EXISTS category;")
 cur.execute('''
 CREATE TABLE category(
@@ -48,5 +38,13 @@ with open('Ebay_dress.csv','r',encoding="utf8") as f:
     cur.copy_expert('COPY products(title,price,item_url,image_url,category_name) FROM STDIN WITH HEADER CSV',f)
 connection.commit()
 
+cur.execute(
+'''CREATE TABLE Product_joined AS
+SELECT * FROM products JOIN category ON products.category_name = category.categoryname;
+''')
 
+cur.execute('''ALTER TABLE product_joined DROP COLUMN categoryname;''')
+connection.commit()
+
+connection.commit()
 
