@@ -20,7 +20,7 @@ class Webscraping:
 
     def extract(self,num_items:int, keyword:str) -> DataFrame:
         """
-         A basic web-scraper on scraping Ebay data based on specific category ie dress, bicycle
+        A basic web-scraper on scraping Ebay data based on specific category ie dress, bicycle
 
         Parameters:
         num_items (int): The number of samples (observations) of data to be scraped.
