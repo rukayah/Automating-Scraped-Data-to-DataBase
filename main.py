@@ -4,7 +4,7 @@ from src.products import Products
 from src.categories import Category
 
 
-# Example of how the program should be run
+# How the program should be run
 db = Database()
 db.connect()
 db.create_tables()
