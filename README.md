@@ -1,6 +1,6 @@
 # Automating-Scraped-Data-to-DataBase
 
-A basic web-scraper on scraping Ebay data based on specific keyword ie dress, bicycle.The web scraper can be found in src/scraper and it contains 3 methods which are extract(), add_category_to_database() and add_product_to_database()
+A basic web-scraper on scraping eBay data based on specific keyword ie dress, bicycle.The web scraper can be found in src/scraper and it contains 3 methods which are extract(), add_category_to_database() and add_product_to_database()
 
         Parameters:
         num_items (int): The number of samples (observations) of data to be scraped.
